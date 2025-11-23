@@ -1,9 +1,13 @@
 function minDate(dates) {
-  //write you code here
+  // Use reduce to iterate through dates
+  return dates.reduce((min, current) => {
+    // Compare the current date string with the min date string
+    // Because YYYY/MM/DD format is lexicographically sortable, string comparison works
+    return current < min ? current : min;
+  }, dates[0]); // Start with the first date as the initial minimum
 }
 
-// Do not change the code
-
+// Example usage:
 var dates = [
   "2023/03/01",
   "2023/03/02",
